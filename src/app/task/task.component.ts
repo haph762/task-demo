@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 })
 export class TaskComponent implements OnInit {
   tasks: Task[] = [];
-
+  taskNew: Task[] = [];
+  taskContinue: Task[] = [];
+  taskEnd: Task[] = [];
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -26,7 +28,12 @@ export class TaskComponent implements OnInit {
     //   }
     // ];
     this.tasks = JSON.parse(localStorage.getItem('task'));
-    if (!this.tasks) this.tasks = [];
+    if (!this.tasks) {
+      this.tasks = [];
+    }
+    this.taskNew = this.tasks.filter(x => x.status == '0');
+    this.taskContinue = this.tasks.filter(x => x.status == '1');
+    this.taskEnd = this.tasks.filter(x => x.status == '2');
   }
   add() {
     this.router.navigate(['/task/add']);
