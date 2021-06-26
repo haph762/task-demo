@@ -1,0 +1,72 @@
+<!-- <div class="card-header">
+  <div class="container">
+    <strong>Task List</strong>
+    <button type="button" style="float: right" class="btn btn-primary" (click)="add()" >
+    Add new
+  </button>
+  </div>
+</div> -->
+<div class="row">
+  <div>
+    <button type="button" style="float: right; width: 150px;" class="btn btn-primary" (click)="add()" >
+  Add new
+  </button>
+  </div>
+
+  <div class="col-4">
+    <h4>Khởi tạo</h4>
+    <div class="row">
+      <div class="col" *ngFor="let item of tasks; let i = index">
+        <div class="cards">
+          <div class="card card1">
+            <div class="noi-dung">
+              <h3>{{item.name}}</h3>
+              <p>{{item.description}}</p>
+              <button *ngIf="item.status == '0'" class="btn1">Khởi tạo</button>
+              <button *ngIf="item.status == '1'" class="btn1">Đang làm</button>
+              <button *ngIf="item.status == '2'" class="btn1">Kết thúc</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <h4>Đang làm</h4>
+    <div class="row">
+      <div class="col" *ngFor="let item of tasks; let i = index">
+        <div class="cards">
+          <div class="card card1">
+            <div class="noi-dung">
+              <h3>{{item.name}}</h3>
+              <p>{{item.description}}</p>
+              <button *ngIf="item.status == '0'" class="btn2">Khởi tạo</button>
+              <button *ngIf="item.status == '1'" class="btn2">Đang làm</button>
+              <button *ngIf="item.status == '2'" class="btn2">Kết thúc</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <h4>Kết thúc</h4>
+    <div class="row">
+      <div class="col" *ngFor="let item of tasks; let i = index">
+        <div class="cards">
+          <div class="card card1">
+            <div class="noi-dung">
+              <h3>{{item.name}}</h3>
+              <p>{{item.description}}</p>
+              <button *ngIf="item.status == '0'" class="btn3">Khởi tạo</button>
+              <button *ngIf="item.status == '1'" class="btn3">Đang làm</button>
+              <button *ngIf="item.status == '2'" class="btn3">Kết thúc</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

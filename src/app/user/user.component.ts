@@ -31,6 +31,7 @@ export class UserComponent implements OnInit {
     //   }
     // ];
     this.userList = JSON.parse(localStorage.getItem('dataUser'));
+    if (!this.userList) this.userList = [];
   }
   save() {
     if (this.userList.length === 0) {
