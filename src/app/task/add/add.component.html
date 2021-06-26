@@ -16,7 +16,10 @@
         </div>
         <div class="col-md-3">
           <label for="user" class="form-label">User Id</label>
-          <input type="text" name="username"  [(ngModel)] = "task.user_id" class="form-control" id="user" placeholder="User Name">
+          <!-- <input type="text" name="username"  [(ngModel)] = "task.user_id" class="form-control" id="user" placeholder="User Name"> -->
+          <select (change)="changeUser()" [(ngModel)]="task.user_id" class="form-control">
+            <option *ngFor="let user of uses">{{user.name}}</option>
+          </select>
         </div>
       </div>
 
